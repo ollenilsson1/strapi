@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "timeToAppointment": {
+      "type": "datetime"
+    },
+    "message": {
+      "type": "richtext"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "bookings"
+    },
+    "product": {
+      "model": "product",
+      "via": "bookings"
+    }
+  }
+}
